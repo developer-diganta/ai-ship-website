@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", system-ui, sans-serif;
+  --color-vercel-bg: #000000;
+  --color-vercel-fg: #ffffff;
+  --color-vercel-gray-100: #111111;
+  --color-vercel-gray-200: #333333;
+  --color-vercel-gray-300: #444444;
+  --color-vercel-gray-400: #666666;
+  --color-vercel-gray-500: #888888;
+  --color-vercel-gray-800: #a1a1aa;
+  --color-accent-blue: #0070f3;
+  --color-accent-purple: #7928ca;
+  --color-accent-blue-dim: rgba(0, 112, 243, 0.1);
+}
+
+body {
+  background-color: var(--color-vercel-bg);
+  color: var(--color-vercel-fg);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
