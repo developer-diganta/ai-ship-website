@@ -7,31 +7,29 @@ export function Layout() {
   const isDocs = location.pathname.startsWith('/docs');
 
   return (
-    <div className="min-h-screen bg-vercel-bg text-vercel-fg font-sans selection:bg-accent-blue-dim selection:text-white relative overflow-hidden flex flex-col">
-      {/* Background ambient light */}
-      {!isDocs && (
-        <>
-          <motion.div
-            animate={{
-              scale: [1, 1.2, 1],
-              opacity: [0.3, 0.5, 0.3],
-              rotate: [0, 90, 0]
-            }}
-            transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-accent-blue/20 blur-[120px] rounded-[100%] pointer-events-none -z-10"
-          />
-          <motion.div
-            animate={{
-              scale: [1, 1.3, 1],
-              opacity: [0.2, 0.4, 0.2],
-              x: [0, -50, 0],
-              y: [0, 50, 0]
-            }}
-            transition={{ duration: 20, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-            className="absolute bottom-[-10%] right-[-5%] w-[600px] h-[500px] bg-accent-purple/20 blur-[120px] rounded-[100%] pointer-events-none -z-10"
-          />
-        </>
-      )}
+    <div className="min-h-screen bg-[#030014] text-vercel-fg font-sans selection:bg-accent-blue/30 selection:text-white relative overflow-hidden flex flex-col">
+      {/* Universal Deep Animated Background */}
+      <div className="fixed inset-0 z-[-3]">
+        <div className="absolute inset-0 bg-[#030014]" />
+        {/* Soft top-glow */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_800px_at_50%_-100px,#1a103c,transparent)]" />
+        {/* Modern Dot/Grid overlay */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-40" />
+      </div>
+
+      {/* Global Roaming Ambient Light Orbs */}
+      <div className="fixed inset-0 overflow-hidden z-[-2] pointer-events-none">
+        <motion.div
+           animate={{ x: ['-20vw', '100vw'], y: ['-10vh', '20vh'] }}
+           transition={{ duration: 25, repeat: Infinity, repeatType: 'reverse', ease: 'linear' }}
+           className="absolute top-[10%] w-[500px] sm:w-[800px] h-[500px] sm:h-[800px] bg-accent-purple/10 blur-[120px] rounded-full mix-blend-screen"
+        />
+        <motion.div
+           animate={{ x: ['100vw', '-20vw'], y: ['50vh', '-10vh'] }}
+           transition={{ duration: 30, repeat: Infinity, repeatType: 'reverse', ease: 'linear' }}
+           className="absolute top-[30%] w-[400px] sm:w-[600px] h-[400px] sm:h-[600px] bg-accent-blue/10 blur-[120px] rounded-full mix-blend-screen"
+        />
+      </div>
 
       {/* Navigation */}
       <nav className="flex items-center justify-between px-6 py-4 border-b border-vercel-gray-200/50 backdrop-blur-xl sticky top-0 z-50 bg-black/50">
